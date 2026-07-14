@@ -1,1 +1,1 @@
-Venez prendre vos tickets ( telecharger le .html / ouvrez le et compléter les infos puis quand on vous redirige sur votre boite mail envoyer moi le mail déjà pré-fait )
+Venez prendre vos tickets ( telecharger le .html / ouvrez le et compléter les infos puis quand on vous redirige sur votre boite mail envoyer moi le mail déjà pré-fait ) FONCTIONNE EGALEMENT SUR TELEPHONE 
