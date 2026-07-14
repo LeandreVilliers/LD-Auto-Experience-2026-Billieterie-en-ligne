@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>LD Auto experience 2026</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        header {
+            background: rgba(0,0,0,0.7);
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background: rgba(0,0,0,0.6);
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #ffcc00;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: rgba(0,0,0,0.7);
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #ffcc00;
+        }
+
+        /* TIMER */
+        #timer {
+            font-size: 2rem;
+            text-align: center;
+            margin: 20px 0;
+            color: #ffcc00;
+        }
+
+        /* FORMULAIRE */
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, select {
+            width: 100%;
+            max-width: 300px;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #c00;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #900;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: rgba(0,0,0,0.6);
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>LD Auto experience 2026</h1>
+    <p>4 septembre 2026 - Circuit de Nurburgrin</p>
+</header>
+
+<nav>
+    <a href="#accueil">Accueil</a>
+    <a href="#programme">Programme</a>
+    <a href="#billetterie">Billetterie</a>
+</nav>
+
+<div class="container">
+
+    <!-- TIMER -->
+    <h2>Compte à rebours avant l'événement</h2>
+    <div id="timer">Chargement...</div>
+
+    <script>
+        function updateTimer() {
+            const eventDate = new Date("September 4, 2026 00:00:00").getTime();
+            const now = new Date().getTime();
+            const diff = eventDate - now;
+
+            if (diff <= 0) {
+                document.getElementById("timer").innerHTML = "L'événement commence aujourd'hui !";
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById("timer").innerHTML =
+                days + " jours " + hours + " h " + minutes + " min " + seconds + " s";
+        }
+
+        setInterval(updateTimer, 1000);
+    </script>
+
+    <!-- ACCUEIL -->
+    <section id="accueil">
+        <h2>Accueil</h2>
+        <p>Courses, drift, exposition de voitures, pilotes… Un événement automobile unique !</p>
+    </section>
+
+    <!-- PROGRAMME -->
+    <section id="programme">
+        <h2>Programme</h2>
+        <ul>
+            <li>21h00 – Exposition</li>
+            <li>22h00 – Sessions circuit</li>
+            <li>22h30 – Démonstration drift</li>
+            <li>23h00 – Défilé des expositions</li>
+            <li>01h00 – Fin de l'évenement</li>
+
+        </ul>
+    </section>
+
+    <!-- BILLETTERIE -->
+    <section id="billetterie">
+        <h2>Billetterie</h2>
+        <form action="mailto:laurentmanoah44@gmail.com" method="post" enctype="text/plain">
+            <label>Nom prénom complet IN GAME </label>
+            <input type="text" name="Nom" required>
+
+            <label>Email IRL </label>
+            <input type="email" name="Email" required>
+
+            <label>Type de billet</label>
+            <select name="Billet" required>
+                <option value="">-- Choisir --</option>
+                <option value="Pass EXPO - 500€">Pass EXPO - 500€</option>
+                <option value="Pass Visiteur - GRATUIT">Pass Visiteur - GRATUIT</option>
+                <option value="VIP - 5000€">VIP - 5000€</option>
+            </select>
+
+            <label>Quantité</label>
+            <input type="number" name="Quantité" min="1" value="1" required>
+
+            <button type="submit">Envoyer la demande</button>
+        </form>
+    </section>
+
+</div>
+
+<footer>
+    &copy; 2026 LD Auto experience - Tous droits réservés
+</footer>
+
+</body>
+</html>
